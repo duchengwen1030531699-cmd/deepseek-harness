@@ -1,0 +1,110 @@
+/* Sidebar foot balance strip and its fixed detail panel. */
+
+/* The footer-actions row is the real flex container (its class name is
+   hashed); the slot anchor div[data-slot] is display:contents and does NOT
+   participate in layout. Selecting the container through the stable
+   data-slot seam and wrapping the row gives the balance strip its own line,
+   fully inside the sidebar, instead of overflowing the sidebar edge where
+   the app frame clips it. */
+.cell {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  margin: 8px 0 0;
+}
+
+.balance {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  height: 32px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--dsw-alias-label-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.balance:hover {
+  background: var(--dsw-alias-bg-layer-2);
+  color: var(--dsw-alias-label-primary);
+}
+
+.balanceError {
+  color: var(--dsw-alias-state-warn-primary);
+}
+
+.panel {
+  position: fixed;
+  z-index: 9999;
+  width: 232px;
+  padding: 12px;
+  background: var(--dsw-alias-bg-overlay);
+  border: 1px solid var(--dsw-alias-border-l1);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+  font-size: 12px;
+  color: var(--dsw-alias-label-primary);
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.9;
+}
+
+.key {
+  color: var(--dsw-alias-label-secondary);
+}
+
+.value {
+  font-variant-numeric: tabular-nums;
+}
+
+.ok {
+  color: var(--dsw-alias-state-success-primary);
+}
+
+.bad {
+  color: var(--dsw-alias-state-error-primary);
+}
+
+.error {
+  margin-top: 8px;
+  color: var(--dsw-alias-state-error-primary);
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.button {
+  margin-top: 10px;
+  width: 100%;
+  height: 26px;
+  border: 1px solid var(--dsw-alias-border-l1);
+  background: var(--dsw-alias-bg-layer-1);
+  border-radius: 6px;
+  color: var(--dsw-alias-label-primary);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--dsw-alias-bg-layer-2);
+}
+
+.meta {
+  margin-top: 8px;
+  color: var(--dsw-alias-label-secondary);
+  font-size: 11px;
+}

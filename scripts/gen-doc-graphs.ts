@@ -222,6 +222,14 @@ const SERVICE_ROLES: ServiceRole[] = [
     note: 'Owns local per-assistant-message feedback, lifecycle and target validation, per-item compare-and-set, and the Host unary Remote contract without entering Session history or telemetry.',
   },
   {
+    key: 'promptOptimizer',
+    pkg: 'prompt-optimizer',
+    title: 'Draft-to-prompt optimization',
+    mode: 'core',
+    consumers: ['ui-prompt-optimizer'],
+    note: 'Rewrites a draft through the harness LLM route, records the exact auxiliary request on the session log, and exposes the Host unary Remote contract.',
+  },
+  {
     key: 'workspaceRegistry',
     pkg: 'workspace',
     title: 'Workspace entity registry',

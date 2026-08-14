@@ -219,6 +219,14 @@ declare module '@deepseek-ai/dsh-client-ui-slots' {
      * a model here.
      */
     'conversation.input.model': { kind: 'single'; scope: 'session'; owner: InputControlOwnerProps }
+    /**
+     * Companion controls rendered immediately RIGHT of the model select, still
+     * before the send button — the additive way to put a small tool-row action
+     * beside the model affordance without touching the plan/model seats. Same
+     * `locked`-only owner share as those seats; entries render by ascending
+     * `order`, and the seat renders nothing while empty.
+     */
+    'conversation.input.model.tools': { kind: 'list'; scope: 'session'; owner: InputControlOwnerProps }
   }
 
   /**
@@ -544,7 +552,7 @@ export interface InputControlOwnerProps {
 /** Full composer-bar props: standard kit & owner share & control-seat render share & injected share (hooks bound) & locale seat. */
 export type ComposerBarProps =
   PropsRuntime<'conversation.composer.bar'>
-  & PropsRenderSlots<'conversation.input.plan' | 'conversation.input.model'>
+  & PropsRenderSlots<'conversation.input.plan' | 'conversation.input.model' | 'conversation.input.model.tools'>
   & InjectFace<ComposerBarInjected>
   & PropsLocale<'conversation'>
 

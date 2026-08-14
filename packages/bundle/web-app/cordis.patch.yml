@@ -66,6 +66,14 @@
       config:
         maxNoteBytes: 8192
 
+    # Prompt optimizer: the composer optimize button's Host Remote.
+    - id: prompt-optimizer
+      name: '@deepseek-ai/dsh-prompt-optimizer'
+      config:
+        maxInputBytes: 8192
+        maxOutputTokens: 1024
+        timeoutMs: 30000
+
     # Browser Session export: `/export` command plus the shared download dialog.
     - id: session-log-download
       name: '@deepseek-ai/dsh-session-log-export'
@@ -249,6 +257,11 @@
     # Model selection: the /model popupSelect + composer seat over session.models.
     - id: ui-model-selection
       name: '@deepseek-ai/dsh-client-ui-model-selection'
+
+    # Prompt optimizer: composer tool-row optimize button over the
+    # promptOptimizer Remote.
+    - id: ui-prompt-optimizer
+      name: '@deepseek-ai/dsh-client-ui-prompt-optimizer'
 
     - id: ui-permission
       name: '@deepseek-ai/dsh-client-ui-permission-presets'

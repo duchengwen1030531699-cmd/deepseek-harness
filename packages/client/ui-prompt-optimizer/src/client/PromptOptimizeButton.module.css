@@ -1,0 +1,38 @@
+/* Composer tool-row optimize button: 28px circle matching the sibling
+   attach circle (see InputBar's .add), secondary tone, sparkle glyph. */
+.button {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 999px;
+  background: var(--dsw-specific-selector);
+  color: var(--dsw-alias-label-primary);
+  cursor: pointer;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--dsw-alias-interactive-bg-hover-solid);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.spinner {
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid var(--dsw-alias-label-caption);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: prompt-optimize-spin 700ms linear infinite;
+}
+
+@keyframes prompt-optimize-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

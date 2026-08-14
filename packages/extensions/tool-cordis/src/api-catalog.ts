@@ -964,6 +964,19 @@ export const SERVICE_API: readonly ServiceApiEntry[] = [
     ],
   },
   {
+    key: 'promptOptimizer',
+    summary: 'The prompt-optimizer Remote service.',
+    description: 'The prompt-optimizer Remote service. Resolves the session\'s Agent, records the exact auxiliary model request on the session log, and returns the normalized optimized prompt.',
+    methods: [
+      {
+        signature: '@Remote(\'optimize\') async optimize(agent: Agent, request: PromptOptimizeRequest): Promise<PromptOptimizeResult>',
+        description: 'Optimize one draft into a well-formed prompt.',
+        parameters: [{ name: 'agent', description: 'exact live Agent resolved from the wire identity.' }, { name: 'request', description: 'the raw draft text.' }],
+        returns: 'the optimized prompt or a stable business failure.',
+      },
+    ],
+  },
+  {
     key: 'sandbox',
     summary: 'Abstract process-sandbox service.',
     description: 'Abstract process-sandbox service. confine must return enforcing argv or fail closed at wrap or runner-execution time; silent unconfined passthrough is forbidden. Functional probes arbitrate multi-runner chains and may be skipped for a sole candidate, whose own refusal remains the fail-closed end.',
@@ -3540,6 +3553,42 @@ export const TYPE_API: readonly TypeApiEntry[] = [
   {
     name: 'PromptContext',
     declaration: 'export interface PromptContext {\n    readonly name: string;\n    readonly order: number;\n    readonly text: string | ((context: AssembleContext) => string);\n}',
+  },
+  {
+    name: 'PromptOptimizeEmpty',
+    declaration: 'export interface PromptOptimizeEmpty {\n    readonly code: \'empty\';\n}',
+  },
+  {
+    name: 'PromptOptimizeFailure',
+    declaration: 'export type PromptOptimizeFailure = PromptOptimizeEmpty | PromptOptimizeRouteUnavailable | PromptOptimizeLlmFailed;',
+  },
+  {
+    name: 'PromptOptimizeLlmFailed',
+    declaration: 'export interface PromptOptimizeLlmFailed {\n    readonly code: \'llm-failed\';\n    readonly message: string;\n}',
+  },
+  {
+    name: 'PromptOptimizeRejected',
+    declaration: 'export interface PromptOptimizeRejected<E extends PromptOptimizeFailure> {\n    readonly ok: false;\n    readonly error: E;\n}',
+  },
+  {
+    name: 'PromptOptimizeRequest',
+    declaration: 'export interface PromptOptimizeRequest {\n    readonly text: string;\n}',
+  },
+  {
+    name: 'PromptOptimizeResult',
+    declaration: 'export type PromptOptimizeResult = PromptOptimizeSuccess<PromptOptimizeValue> | PromptOptimizeRejected<PromptOptimizeFailure>;',
+  },
+  {
+    name: 'PromptOptimizeRouteUnavailable',
+    declaration: 'export interface PromptOptimizeRouteUnavailable {\n    readonly code: \'route-unavailable\';\n}',
+  },
+  {
+    name: 'PromptOptimizeSuccess',
+    declaration: 'export interface PromptOptimizeSuccess<T> {\n    readonly ok: true;\n    readonly value: T;\n}',
+  },
+  {
+    name: 'PromptOptimizeValue',
+    declaration: 'export interface PromptOptimizeValue {\n    readonly prompt: string;\n}',
   },
   {
     name: 'PromptSection',

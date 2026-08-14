@@ -634,6 +634,17 @@ Source: [`packages/schedule/schedule/src/types.ts:219`](../packages/schedule/sch
 
 Source: [`packages/core/session/src/types.ts:332`](../packages/core/session/src/types.ts)
 
+<a id="sessionprompt-optimize-request--log-only"></a>
+
+#### `session/prompt-optimize-request` — log-only
+
+```ts persistence-catalog
+/** Log-only pre-dispatch record of one prompt-optimize model request. */
+'session/prompt-optimize-request': PromptOptimizeLlmRequestEventData
+```
+
+Source: [`packages/prompt/prompt-optimizer/src/index.ts:43`](../packages/prompt/prompt-optimizer/src/index.ts)
+
 <a id="sessiontitle--log-only"></a>
 
 #### `session/title` — log-only

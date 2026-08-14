@@ -1924,6 +1924,51 @@
       "doc": "docs/subsystems/feedback.md",
       "symbol": "MessageFeedbackDeleteResult",
       "source": "packages/feedback/message-feedback/src/types.ts"
+    },
+    {
+      "doc": "docs/subsystems/prompt-optimizer.md",
+      "symbol": "PromptOptimizeValue",
+      "source": "packages/prompt/prompt-optimizer/src/types.ts"
+    },
+    {
+      "doc": "docs/subsystems/prompt-optimizer.md",
+      "symbol": "PromptOptimizeRequest",
+      "source": "packages/prompt/prompt-optimizer/src/types.ts"
+    },
+    {
+      "doc": "docs/subsystems/prompt-optimizer.md",
+      "symbol": "PromptOptimizeEmpty",
+      "source": "packages/prompt/prompt-optimizer/src/types.ts"
+    },
+    {
+      "doc": "docs/subsystems/prompt-optimizer.md",
+      "symbol": "PromptOptimizeRouteUnavailable",
+      "source": "packages/prompt/prompt-optimizer/src/types.ts"
+    },
+    {
+      "doc": "docs/subsystems/prompt-optimizer.md",
+      "symbol": "PromptOptimizeLlmFailed",
+      "source": "packages/prompt/prompt-optimizer/src/types.ts"
+    },
+    {
+      "doc": "docs/subsystems/prompt-optimizer.md",
+      "symbol": "PromptOptimizeFailure",
+      "source": "packages/prompt/prompt-optimizer/src/types.ts"
+    },
+    {
+      "doc": "docs/subsystems/prompt-optimizer.md",
+      "symbol": "PromptOptimizeSuccess",
+      "source": "packages/prompt/prompt-optimizer/src/types.ts"
+    },
+    {
+      "doc": "docs/subsystems/prompt-optimizer.md",
+      "symbol": "PromptOptimizeRejected",
+      "source": "packages/prompt/prompt-optimizer/src/types.ts"
+    },
+    {
+      "doc": "docs/subsystems/prompt-optimizer.md",
+      "symbol": "PromptOptimizeResult",
+      "source": "packages/prompt/prompt-optimizer/src/types.ts"
     }
   ]
 }

@@ -451,6 +451,24 @@ export interface Config {
 
 来源：[`packages/client/hmr/src/index.ts:31`](../packages/client/hmr/src/index.ts)
 
+<a id="deepseek-aidsh-client-ui-balance"></a>
+
+## `@deepseek-ai/dsh-client-ui-balance`
+
+需要：`webServer`
+
+```ts config-catalog
+/** Deployment-varying plugin configuration. */
+export interface BalanceConfig {
+  /** DeepSeek API base URL; defaults to the official endpoint. */
+  baseUrl?: string
+  /** Minimum seconds a healthy cached view stays fresh (browser poll pacing). */
+  refreshIntervalSeconds?: number
+}
+```
+
+来源：[`packages/client/ui-balance/src/index.ts:17`](../packages/client/ui-balance/src/index.ts)
+
 <a id="deepseek-aidsh-code-runtime-worker-thread"></a>
 
 ## `@deepseek-ai/dsh-code-runtime-worker-thread`

@@ -222,6 +222,10 @@
     - id: ui-cordis
       name: '@deepseek-ai/dsh-client-ui-cordis'
 
+    # Sidebar foot account-balance strip; shadows the cordis controller cell.
+    - id: ui-balance
+      name: '@deepseek-ai/dsh-client-ui-balance'
+
     # Durable workflow lifecycle as an independent Chat node after the
     # existing generic workflow tool row.
     - id: ui-workflow-run
